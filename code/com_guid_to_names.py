@@ -114,7 +114,7 @@ def get_or_make_guid_struct(type_name):
     strid = ida_struct.add_struc(BADADDR, type_name, False)
     s = ida_struct.get_struc(strid)
     if s is None:
-        raise Exception('Unable to create structure \"' + GUID_STRUCT_NAME + '\".')
+        raise Exception('Unable to create structure \"' + type_name + '\".')
     s.set_alignment(2)
     ida_struct.add_struc_member(s, 'Data1', 0, ida_bytes.dword_flag(),
                                 None, 4)
